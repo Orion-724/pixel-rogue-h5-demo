@@ -5,7 +5,7 @@
 使用原生 **JavaScript / Canvas 2D / HTML / CSS**，不依赖游戏引擎、构建工具或运行时第三方库。当前重点是构筑交互、触屏适配与最低限度统一美术，而非完整商业游戏。
 
 - **源码仓库**：[Orion-724/pixel-rogue-h5-demo](https://github.com/Orion-724/pixel-rogue-h5-demo)
-- **在线试玩**：尚未完成部署与外网验证；部署完成后在此补充实际地址。
+- **在线试玩**：[Orion-724/pixel-rogue-h5-demo](https://orion-724.github.io/pixel-rogue-h5-demo/)
 - **推荐环境**：手机 Chrome，横屏游玩；桌面支持键盘和鼠标。
 
 ## 玩法与操作
