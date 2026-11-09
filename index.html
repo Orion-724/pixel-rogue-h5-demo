@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>像素拼装肉鸽</title>
+<style>
+:root{color-scheme:dark;--safe-left:env(safe-area-inset-left,0px);--safe-right:env(safe-area-inset-right,0px);--safe-top:env(safe-area-inset-top,0px);--safe-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#080b12;color:#fff;font-family:"Microsoft YaHei",sans-serif;overscroll-behavior:none}
+body{display:grid;place-items:center;touch-action:manipulation}
+#stage{position:relative;width:100vw;width:100dvw;height:100vh;height:100dvh;overflow:hidden;display:grid;place-items:center;background:#080b12}
+canvas#game{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:block;width:min(100vw,177.7778vh);width:min(100dvw,177.7778dvh);height:min(100vh,56.25vw);height:min(100dvh,56.25dvw);image-rendering:auto;background:#101725;touch-action:none}
+#touch-controls[hidden]{display:none!important}
+#touch-controls{display:none;position:absolute;inset:0;pointer-events:none;padding:var(--safe-top) var(--safe-right) var(--safe-bottom) var(--safe-left)}
+.touch-control{position:absolute;top:55%;width:clamp(136px,32vh,208px);height:clamp(136px,32vh,208px);border:2px solid #bdd2e8aa;border-radius:50%;background:#15283b70;color:#fff;font:600 clamp(14px,3vh,20px) "Microsoft YaHei",sans-serif;box-shadow:0 3px 16px #0008;touch-action:none;pointer-events:auto;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+#move-control{left:calc((100vw - min(100vw,177.7778dvh))/4 + var(--safe-left));transform:translate(-50%,-50%);background:radial-gradient(circle,#27445c70 0 27%,#15283b70 29%)}
+#move-nub{position:absolute;left:50%;top:50%;width:36%;height:36%;border:2px solid #d9eaff;background:#6793b8;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none}
+#fire-control{right:calc((100vw - min(100vw,177.7778dvh))/4 + var(--safe-right));transform:translate(50%,-50%);border-color:#ffc68a;background:#8b392b70;color:#fff2d8}
+#rotate-notice{display:none;position:absolute;z-index:5;inset:0;align-items:center;justify-content:center;padding:24px;background:#080b12f2;color:#f5c66b;text-align:center;font-size:20px}
+@media (pointer:coarse) and (orientation:landscape){#touch-controls{display:block}}
+@media (pointer:coarse) and (orientation:landscape) and (max-aspect-ratio:1.85/1){#move-control{left:7vw;top:88%}#fire-control{right:7vw;top:88%}}
+@media (pointer:coarse) and (orientation:portrait){#rotate-notice{display:flex}}
+</style>
+</head>
+<body>
+<main id="stage">
+  <canvas id="game" width="1280" height="720" aria-label="像素拼装肉鸽游戏画布"></canvas>
+  <div id="touch-controls" aria-label="触屏战斗控制">
+    <button id="move-control" class="touch-control" type="button" aria-label="八方向移动摇杆"><span id="move-nub"></span></button>
+    <button id="fire-control" class="touch-control" type="button" aria-label="释放火元素">火</button>
+  </div>
+  <div id="rotate-notice" role="status">请将设备横屏后继续游戏</div>
+</main>
+<script src="game.js"></script>
+</body>
+</html>
+
+
+
+
+
